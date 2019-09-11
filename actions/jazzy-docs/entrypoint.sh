@@ -9,13 +9,13 @@ cd project
 
 swift build && \
 sourcekitten doc --spm-module $TARGET > $TARGET.json && \
-jazzy --clean --sourcekitten-sourcefile $TARGET.json --module $TARGET --output ../docs && \
+jazzy --clean --sourcekitten-sourcefile $TARGET.json --module $TARGET --output ./docs && \
 \
 git checkout -B gh-pages && \
 git pull origin gh-pages &>/dev/null && \
 git reset --hard HEAD && \
-cp -r .git ../docs && \
-cd ../docs && \
+cp -r .git ./docs && \
+cd ./docs && \
 git add . && \
 \
 git commit -m "Update Jazzy docs" && \
